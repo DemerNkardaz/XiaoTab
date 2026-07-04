@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"version": "0.1.0",
+
+	"name": "__MSG_extensionName__",
+	"description": "__MSG_extensionDescription__",
+	"author": "__MSG_author__",
+
+	"homepage_url": "https://github.com/DemerNkardaz/XiaoTab",
+
+	"icons": {
+		"48": "icons/48.png",
+		"96": "icons/96.png",
+		"128": "icons/128.png"
+	},
+
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
+
+	"permissions": ["storage"],
+
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "xiaotab@@nkardaz",
+			"data_collection_permissions": {
+				"required": ["none"]
+			}
+		}
+	}
+}
