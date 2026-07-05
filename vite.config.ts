@@ -22,7 +22,7 @@ export default defineConfig({
     svgLoader(),
     svgComponents({
       dts: 'src/types/svg-components.d.ts',
-      dirs: [	
+      dirs: [
         { dir: '@/assets/images/resources', prefix: 'Logo' },
         { dir: '@/assets/images/icons', prefix: 'Icon' },
         { dir: '@/assets/images/ui', prefix: 'UI' },
@@ -39,6 +39,7 @@ export default defineConfig({
       scss: {
         additionalData: `
 					@use "@/styles/tokens" as *;
+					@use "@/styles/mixins" as *;
 					@use "@/styles/functions" as *;
 				`,
       },

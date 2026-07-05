@@ -1,0 +1,10 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/functions" as *;
+
+@mixin ico {
+  --icon-fill: currentColor;
+
+  &.--on-edit {
+    --icon-fill: #{darken($accent, 20%)};
+  }
+}

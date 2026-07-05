@@ -5,9 +5,9 @@ const uiMode = useUiModeStore();
 </script>
 
 <template>
-  <div class="toolbar">
+  <div class="toolbar" :class="{ '--on-edit': uiMode.isEditMode }">
     <button @click="uiMode.toggle">
-      {{ uiMode.isEditMode ? 'Готово' : 'Редактировать' }}
+      <IconSettings class="ico-small" :class="{ '--on-edit': uiMode.isEditMode }" />
     </button>
   </div>
 </template>
@@ -16,8 +16,10 @@ const uiMode = useUiModeStore();
 .toolbar {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  opacity: 0.05;
+  transition: opacity 0.1s ease;
+
   z-index: 1000;
 
   -webkit-user-select: none;
@@ -28,20 +30,15 @@ const uiMode = useUiModeStore();
   padding: 1rem;
 
   button {
-    background-color: rgba(255, 255, 255, 0.8);
     border: none;
-    padding: 10px 20px;
+    padding: 1rem;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.25rem;
   }
-  user-select: none;
 
-  button {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
+  &:hover,
+  &.--on-edit {
+    opacity: 1;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 html {
   font-size: 16px;
+  color: $text-primary;
 }
 
 body {
@@ -9,4 +10,6 @@ body {
 .ico-small {
   width: 1em;
   height: 1em;
+
+  @include ico;
 }

@@ -13,6 +13,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     IconBackgrounds: typeof import('@/assets/images/icons/backgrounds.svg')['default']
+    IconSettings: typeof import('@/assets/images/icons/settings.svg')['default']
     LogoGithub: typeof import('@/assets/images/resources/github.svg')['default']
     LogoKoFi: typeof import('@/assets/images/resources/ko-fi.svg')['default']
     LogoPronounsPage: typeof import('@/assets/images/resources/pronouns-page.svg')['default']
@@ -25,6 +26,7 @@ declare module 'vue' {
 // For TSX support
 declare global {
   const IconBackgrounds: typeof import('@/assets/images/icons/backgrounds.svg')['default']
+  const IconSettings: typeof import('@/assets/images/icons/settings.svg')['default']
   const LogoGithub: typeof import('@/assets/images/resources/github.svg')['default']
   const LogoKoFi: typeof import('@/assets/images/resources/ko-fi.svg')['default']
   const LogoPronounsPage: typeof import('@/assets/images/resources/pronouns-page.svg')['default']
