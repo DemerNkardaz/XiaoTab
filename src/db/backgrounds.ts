@@ -1,6 +1,7 @@
 import { db } from './schema';
 import { hashBlob } from './hash';
 import type { BackgroundRecord } from './types';
+import { UNGROUPED_GROUP_ID } from './constants';
 
 export async function addBackground(params: {
   blob: Blob;
@@ -42,12 +43,11 @@ export async function getBackground(id: string) {
   return db.backgrounds.get(id);
 }
 
-export async function getBackgroundsByGroup(groupId: string) {
+export async function getBackgroundsByGroup(groupId: string): Promise<BackgroundRecord[]> {
+  if (groupId === UNGROUPED_GROUP_ID) {
+    return db.backgrounds.filter((bg) => bg.groups.length === 0).toArray();
+  }
   return db.backgrounds.where('groups').equals(groupId).toArray();
-}
-
-export async function getBackgroundsWithoutGroup() {
-  return db.backgrounds.filter((bg) => bg.groups.length === 0).toArray();
 }
 
 export async function getAllBackgrounds() {

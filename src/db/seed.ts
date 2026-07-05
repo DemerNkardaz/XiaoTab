@@ -1,4 +1,5 @@
 import { db } from './schema';
+import { UNGROUPED_GROUP_ID } from './constants';
 
 export async function ensureDefaultProfile(): Promise<void> {
   const profilesCount = await db.profiles.count();
@@ -10,7 +11,7 @@ export async function ensureDefaultProfile(): Promise<void> {
     await db.profiles.add({
       id: defaultProfileId,
       name: 'Default',
-      activeBackgroundGroupId: null,
+      activeBackgroundGroupId: UNGROUPED_GROUP_ID,
       createdAt: Date.now(),
     });
 

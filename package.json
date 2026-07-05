@@ -18,14 +18,17 @@
     "nanoid": "^5.1.16",
     "pinia": "^3.0.4",
     "vue": "^3.5.38",
+    "vue-i18n": "^11.4.6",
     "webextension-polyfill": "^0.12.0"
   },
   "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^11.2.4",
     "@tsconfig/node24": "^24.0.4",
     "@types/firefox-webext-browser": "^143.0.0",
     "@types/node": "^24.13.2",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vue/tsconfig": "^0.9.1",
+    "json5": "^2.2.3",
     "npm-run-all2": "^9.0.2",
     "sass": "^1.101.0",
     "typescript": "~6.0.0",
